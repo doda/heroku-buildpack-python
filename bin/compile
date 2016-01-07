@@ -215,6 +215,9 @@ set-default-env PYTHONPATH /app/
 # Install sane-default script for WEB_CONCURRENCY environment variable.
 cp $ROOT_DIR/vendor/python.webconcurrency.sh $WEBCONCURRENCY_PROFILE_PATH
 
+# Our own stuff
+chmod +x $BIN_DIR/steps/post-install
+sub-env $BIN_DIR/steps/post-install
 
 # Experimental post_compile hook.
 bpwatch start post_compile
